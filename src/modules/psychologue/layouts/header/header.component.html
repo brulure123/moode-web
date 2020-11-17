@@ -1,0 +1,44 @@
+<mat-toolbar color="primary" [class.mat-elevation-z24]="true">
+    <mat-toolbar-row >
+       <button mat-icon-button (click)="toggleSidebar()">
+           <mat-icon>menu</mat-icon>
+       </button>
+
+       <span>Moode</span>
+
+       <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" class="menuP">
+           <ul fxLayout="row" fxLayoutGap="20px">
+               <li>
+                   <button mat-icon-button>
+                        <mat-icon>settings</mat-icon>
+                   </button>
+               </li>
+               <li>
+                    <button mat-icon-button>
+                        <mat-icon>help_outline</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item style="width: 400px;">
+                            <mat-icon>exit_to_app</mat-icon>
+                            <span class="offset-4">Status : <i>Connected</i></span>
+                        </button>
+                        <div mat-menu-item style="width: 400px;">
+                            <mat-icon>exit_to_app</mat-icon>
+                            <span class="offset-8">Profile</span>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <button mat-menu-item style="width: 400px;">
+                            <mat-icon>exit_to_app</mat-icon>
+                            <span class="offset-6">Déconnexion</span>
+                        </button>
+                    </mat-menu>
+                </li>
+           </ul>
+       </div>
+    </mat-toolbar-row>
+</mat-toolbar>

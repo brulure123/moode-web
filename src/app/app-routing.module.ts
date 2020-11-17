@@ -23,7 +23,7 @@ const routes: Routes = [
           import('../modules/admin/admin-routing.module').then(m => m.AdminRoutingModule),
   },
   {
-      path: 'psy',
+      path: 'psychologue',
       loadChildren: () =>
           import('../modules/psychologue/psychologue-routing.module').then(m => m.PsychologueRoutingModule),
   },
