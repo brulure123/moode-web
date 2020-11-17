@@ -1,4 +1,3 @@
-import {AngularMaterialModule } from './../angular-material/angular-material.module';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -10,6 +9,9 @@ import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AfficherArticleComponent } from './pages/afficher-article/afficher-article.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { AfficherArticleComponent } from './pages/afficher-article/afficher-arti
   ],
   imports: [
     CommonModule,
-    AngularMaterialModule,
+    MatIconModule,
+    FlexLayoutModule,
+    MatButtonModule,
     BlogRoutingModule
   ]
 })
