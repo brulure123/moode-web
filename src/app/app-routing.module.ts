@@ -27,12 +27,6 @@ const routes: Routes = [
       loadChildren: () =>
           import('../modules/psychologue/psychologue-routing.module').then(m => m.PsychologueRoutingModule),
   },
-  {
-      path: '**',
-      pathMatch: 'full',
-      loadChildren: () =>
-          import('../modules/erreur/erreur-routing.module').then(m => m.ErreurRoutingModule),
-  },
 ];
 
 @NgModule({

@@ -1,3 +1,5 @@
+import { AdminModule } from './../modules/admin/admin.module';
+import { AuthModule } from './../modules/auth/auth.module';
 import { PsychologueModule } from './../modules/psychologue/psychologue.module';
 import { BlogModule } from './../modules/blog/blog.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,13 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BlogModule,
     PsychologueModule,
+    AuthModule,
+    AdminModule,
     BrowserAnimationsModule
   ],
   providers: [],
