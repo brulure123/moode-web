@@ -8,17 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-    formEmail = this.fb.group({
+    signUpForm = this.fb.group({
       email: [null, Validators.required],
       password: [null, Validators.required],
       passwordConf: [null, Validators.required]
-    });
-
-    formIdentites = this.fb.group({
-      nom: [null, Validators.required],
-      postnom: [null, Validators.required],
-      prenom: [null, Validators.required],
-      adresse: [null, Validators.required]
     });
 
     myfilename: string;
@@ -30,11 +23,5 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  emailFormSubmit(): void {
-  }
-
-  identityFormSubmit(): void {
-
-  }
-
+  onSubmit(): void{}
 }

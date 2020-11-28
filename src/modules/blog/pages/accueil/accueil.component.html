@@ -7,11 +7,11 @@
 
     <!-- Blog Post -->
     <div class="card mb-4" *ngFor="let article of articles">
-        <img class="card-img-top" src="../../../assets/dist/img/ai.jpeg" height="300" alt="Card image cap">
+        <img class="card-img-top" src="gs://moode-db.appspot.com/ai.jpeg" height="300" alt="Card image cap">
         <div class="card-body">
             <h2 class="card-title">{{article.titre}}</h2>
-            <p class="card-text">{{ article.coprs}}</p>
-            <a href="#" class="btn btn-primary offset-9">Voir plus... &rarr;</a>
+            <p class="card-text">{{ article.corps}}</p>
+            <a routerLink="./article" class="btn btn-primary offset-9">Voir plus... &rarr;</a>
         </div>
         <div class="card-footer text-muted">
             Posté le 1 Janvier , 2020 par

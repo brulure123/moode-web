@@ -16,6 +16,5 @@ export class AuthentificationComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit(): void {
-    alert('Thanks!');
   }
 }

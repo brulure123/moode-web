@@ -1,106 +1,43 @@
-<mat-horizontal-stepper linear>
-    <mat-step label="Adresse email et Mot de passe">
-        <div class="container">
-            <div class="col-md-8 offset-2">
-                <form [formGroup]="formEmail" novalidate (ngSubmit)="emailFormSubmit()">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Adresse email</mat-label>
-                                <input matInput required formControlName="email">
-                                <mat-error *ngIf="formEmail.controls['email'].hasError('required')">
-                                    Le champ adresse email est <strong>obligatoire</strong>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-12">
-                            <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Mot de passe</mat-label>
-                                <input matInput required formControlName="password">
-                                <mat-error *ngIf="formEmail.controls['password'].hasError('required')">
-                                    Le champ mot de passe est <strong>obligatoire</strong>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-12">
-                            <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Confirmation Mot de passe</mat-label>
-                                <input matInput required formControlName="passwordConf">
-                                <mat-error *ngIf="formEmail.controls['passwordConf'].hasError('required')">
-                                    Le champ confirmation mot de passe est <strong>obligatoire</strong>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                </form>
-                <div class="row">
-                    <div class="col-md-6 offset-10">
-                        <button mat-raised-button color="primary" matStepperNext>Suviant</button>
-                    </div>
-                </div>
-            </div>
+<form [formGroup]="signUpForm" novalidate (ngSubmit)="onSubmit()" class="col-md-4 offset-4">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>______MOODE / ENREGISTREMENT_____</mat-card-title>
+      </mat-card-header>
+        <br>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-md-12">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Adresse email" formControlName="email">
+              <mat-error *ngIf="signUpForm.controls['email'].hasError('required')">
+                L'adresse email est <strong>obligatoire</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <br>
+          <div class="col-md-12">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Mot de passe" formControlName="password">
+              <mat-error *ngIf="signUpForm.controls['password'].hasError('required')">
+                Le mot de passe <strong>est obligatoire</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
         </div>
-    </mat-step>
-    <mat-step label="Vos Identitées">
-        <div class="container">
-            <div class="col-md-8 offset-2">
-                <form [formGroup]="formIdentites" novalidate (ngSubmit)="identityFormSubmit()">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Nom</mat-label>
-                                <input matInput required formControlName="nom">
-                                <mat-error *ngIf="formIdentites.controls['nom'].hasError('required')">
-                                    Votre nom est <strong>obligatoire</strong>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4">
-                            <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Post Nom</mat-label>
-                                <input matInput required formControlName="postnom">
-                                <mat-error *ngIf="formIdentites.controls['postnom'].hasError('required')">
-                                    Votre post-nom est <strong>obligatoire</strong>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4">
-                            <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Prénom</mat-label>
-                                <input matInput required formControlName="prenom">
-                                <mat-error *ngIf="formIdentites.controls['prenom'].hasError('required')">
-                                    Votre prenom est <strong>obligatoire</strong>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-12">
-                            <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Genre</mat-label>
-                                <mat-select>
-                                    <mat-option value="H">Masculin</mat-option>
-                                    <mat-option value="F">Féminin</mat-option>
-                                </mat-select>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-12">
-                            <mat-form-field class="full-width" appearance="outline">
-                                <mat-label>Adresse</mat-label>
-                                <input matInput required formControlName="adresse">
-                                <mat-error *ngIf="formIdentites.controls['adresse'].hasError('required')">
-                                    Votre adresse est <strong>obligatoire</strong>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                </form>
-                <div class="row">
-                    <div class="col-md-6 offset-8">
-                        <button mat-raised-button color="warn" matStepperPrevious style="margin-right: 20px;">Précedent</button>
-                        <button mat-raised-button color="primary" matStepperNext>Suviant</button>
-                    </div>
-                </div>
-            </div>
+        <br>
+        <div class="row">
+          <div class="col-md-7 offset-5">
+            <p>Déjà enregistrer? <a routerLink="../authentification">Connecter-vous</a></p>
+          </div>
         </div>
-    </mat-step>
-    <mat-step label="Vos Coordonnées"></mat-step>
-</mat-horizontal-stepper>
+      </mat-card-content>
+      <div class="row">
+        <div class="col-md-2 offset-8">
+          <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">S'enregistrer</button>
+          </mat-card-actions>
+        </div>
+      </div>
+    </mat-card>
+  </form>
+  
