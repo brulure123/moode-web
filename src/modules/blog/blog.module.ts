@@ -1,3 +1,5 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactComponent } from './pages/contact/contact.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -19,6 +21,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BlogComponent,
     AboutComponent,
     AccueilComponent,
+    ContactComponent,
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
@@ -26,6 +29,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     FlexLayoutModule,
     MatButtonModule,

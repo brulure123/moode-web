@@ -1,1 +1,63 @@
-<p>contact works!</p>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <div class="block-heading-1">
+                    <span>Get In Touch</span>
+                    <h2>Contacter Nous</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mb-5">
+                <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                        <div class="col-md-6 mb-4 mb-lg-0">
+                            <input type="text" class="form-control" placeholder="Nom" formControlName="nom">
+                            <div *ngIf="feedbackForm.controls['nom'].hasError('required')" style="color: red;">
+                                Le champs nom est <strong>obligatoire.</strong>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Prénom" formControlName="prenom">
+                            <div *ngIf="feedbackForm.controls['prenom'].hasError('required')" style="color: red;">
+                                Le champs prenom est <strong>obligatoire.</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" placeholder="Adresse email" formControlName="email">
+                            <div *ngIf="feedbackForm.controls['email'].hasError('required')" style="color: red;">
+                                Le champs email est <strong>obligatoire.</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <textarea formControlName="message" id="" class="form-control" placeholder="Laissez votre message ici." cols="30"
+                                rows="10"></textarea>
+                                <div *ngIf="feedbackForm.controls['message'].hasError('required')" style="color: red;">
+                                    Le champs message est <strong>obligatoire.</strong>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6 ml-auto">
+                            <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5"
+                                value="Envoyer Message">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 ml-auto">
+                <h2 class="text-black">Vous voulez connaitre plus de details ? Contactez-nous <a href="tel://243975442523">+243 975 442 523</a></h2>
+                <p>
+                    Nous sommes à votre disposition. Vos messages seront lus, tous vos feedback nous sont très important !!!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
