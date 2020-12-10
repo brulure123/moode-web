@@ -1,3 +1,4 @@
+import { AuthService } from './../../../../services/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,17 +12,15 @@ export class RegisterComponent implements OnInit {
     signUpForm = this.fb.group({
       email: [null, Validators.required],
       password: [null, Validators.required],
-      passwordConf: [null, Validators.required]
+      passwordConf: [null, Validators.required],
     });
 
-    myfilename: string;
-
-    formCoordonnees = null;
-
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(): void{}
+  onSubmit(): void{
+    this.authService.registerUser(this.signUpForm.value);
+  }
 }

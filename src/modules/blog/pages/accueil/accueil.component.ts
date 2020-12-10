@@ -1,6 +1,6 @@
-import { ArticleService } from './../../services/article.service';
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/models/article.model';
+import { ArticleService } from 'src/services/article.service';
 
 @Component({
   selector: 'app-accueil',
@@ -22,7 +22,5 @@ export class AccueilComponent implements OnInit {
         } as Article;
       });
     });
-
-    console.log(this.articles);
   }
 }

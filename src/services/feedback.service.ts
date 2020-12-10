@@ -1,4 +1,3 @@
-import { Feedback } from './../../../models/feedback.model';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 

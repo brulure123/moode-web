@@ -1,8 +1,6 @@
-import { Feedback } from './../../../../models/feedback.model';
-import { FeedbackService } from './../../services/feedback.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormBuilder, Validators } from '@angular/forms';
-import { throwToolbarMixedModesError } from '@angular/material/toolbar';
+import {FormBuilder, Validators } from '@angular/forms';
+import { FeedbackService } from 'src/services/feedback.service';
 
 @Component({
   selector: 'app-contact',
@@ -30,7 +28,6 @@ export class ContactComponent implements OnInit {
       email: this.feedbackForm.value.email,
       message: this.feedbackForm.value.message
     };
-    
     this.feedbackService.createFeedback(feedback);
   }
 }

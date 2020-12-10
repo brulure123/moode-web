@@ -1,3 +1,4 @@
+import { AuthService } from './../../../../services/auth.service';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
@@ -13,8 +14,11 @@ export class AuthentificationComponent {
     shipping: [null]
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private authService: AuthService,
+    private fb: FormBuilder) {}
 
   onSubmit(): void {
+    this.authService.loginUser(this.addressForm.value);
   }
 }

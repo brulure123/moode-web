@@ -16,11 +16,33 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AbonnementsComponent } from './pages/abonnements/abonnements.component';
+import { MesPatientsComponent } from './pages/mes-patients/mes-patients.component';
+import { MesArticlesComponent } from './pages/mes-articles/mes-articles.component';
+import { PublierArticleComponent } from './pages/publier-article/publier-article.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { WidgetCardComponent } from './widgets/widget-card/widget-card.component';
+import { WidgetAreaComponent } from './widgets/widget-area/widget-area.component';
 
 
 @NgModule({
-  declarations: [PsychologueComponent, HeaderComponent, SidebarComponent, FooterComponent],
+  declarations: [
+    PsychologueComponent,
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent,
+    DashboardComponent,
+    AbonnementsComponent,
+    MesPatientsComponent,
+    MesArticlesComponent,
+    PublierArticleComponent,
+    ProfileComponent,
+    WidgetCardComponent,
+    WidgetAreaComponent
+  ],
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -32,6 +54,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     MatToolbarModule,
     MatMenuModule,
     MatListModule,
+    MatTableModule,
     HighchartsChartModule,
     PsychologueRoutingModule
   ]
