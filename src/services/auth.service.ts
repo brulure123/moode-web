@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Psychologue } from './../models/psychologue.model';
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -15,7 +16,8 @@ export class AuthService {
     private router: Router,
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    private ngZone: NgZone) {
+    private ngZone: NgZone,
+    private snackBar: MatSnackBar) {
 
     this.afAuth.authState.subscribe(user => {
       if (user){
@@ -30,33 +32,43 @@ export class AuthService {
   }
 
    // Sign up with email/password
-   async registerUser(value) {
+   async registerUser(value): Promise<void> {
     try {
-       const result = await this.afAuth.createUserWithEmailAndPassword(value.email, value.password);
-       this.setUserData(result.user);
-       this.ngZone.run(() => {
-        this.router.navigate(['auth']);
+      const result = await this.afAuth.createUserWithEmailAndPassword(value.email, value.password);
+      this.setUserData(result.user);
+      this.ngZone.run(() => {
+        const snackBarRef = this.snackBar.open('Compte créer avec succèes.', 'Ok', {duration: 2000});
+        snackBarRef.afterDismissed().subscribe(() => {
+          this.router.navigate(['auth']);
+        });
       });
-     } catch (error) {
-       window.alert(error.message);
-     }
+    } catch (error) {
+      this.ngZone.run(() => {
+        this.snackBar.open('Echec de création de compte, Vérifiez votre connexion internet ou changez d\'adresse email.', 'Ok');
+      });
+    }
   }
 
   // Sign in with email/password
-  async loginUser(value: any) {
+  async loginUser(value: any): Promise<void> {
     try {
       const result = await this.afAuth.signInWithEmailAndPassword(value.email, value.password);
       this.ngZone.run(() => {
-        this.router.navigate(['psychologue']);
+        const snackBarRef = this.snackBar.open('Connexion effectuer avec succèes.', 'Ok', {duration: 2000});
+        snackBarRef.afterDismissed().subscribe(() => {
+          this.router.navigate(['psychologue']);
+        });
       });
       this.setUserData(result.user);
     } catch (error) {
-      window.alert(error.message);
+      this.ngZone.run(() => {
+        this.snackBar.open('Echec d\'authentification, Vérifiez votre connexion internet ou changez d\'adresse email.', 'Ok');
+      });
     }
   }
 
   // Sign out
-  async logoutUser() {
+  async logoutUser(): Promise<void> {
     await this.afAuth.signOut();
     localStorage.removeItem('user');
     this.router.navigate(['auth']);
@@ -67,7 +79,7 @@ export class AuthService {
     return (user !== null) ? true : false;
   }
 
-   /* Setting up user data when sign in with username/password,
+  /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   setUserData(user): any {

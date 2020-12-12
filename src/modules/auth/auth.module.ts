@@ -14,6 +14,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AuthComponent, AuthentificationComponent, RegisterComponent],
@@ -30,6 +31,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatSelectModule,
     MatToolbarModule,
     FormsModule,
+    MatSnackBarModule,
     ReactiveFormsModule
   ]
 })
