@@ -16,6 +16,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        redirectTo: 'accueil',
+        pathMatch: 'full'
+      },
+      {
+        path: 'accueil',
         component: DashboardComponent,
         resolve: {
           psychologue: PsychologueResolver
@@ -40,7 +45,7 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent,
-      },
+      }
     ]
   }
 ];

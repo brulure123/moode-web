@@ -1,3 +1,5 @@
+import { SignGuard } from './../guards/sign.guard';
+import { PageNotFoundComponent } from './../modules/erreur/components/page-not-found/page-not-found.component';
 import { AuthGuard } from './../guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -6,7 +8,7 @@ const routes: Routes = [
   {
       path: '',
       pathMatch: 'full',
-      redirectTo: '/blog',
+      redirectTo: 'blog',
   },
   {
     path: 'blog',
@@ -28,7 +30,10 @@ const routes: Routes = [
       path: 'psychologue',
       loadChildren: () =>
           import('../modules/psychologue/psychologue-routing.module').then(m => m.PsychologueRoutingModule),
-      canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 

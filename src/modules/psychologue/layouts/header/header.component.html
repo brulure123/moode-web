@@ -23,14 +23,14 @@
                         <mat-icon>person_outline</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
-                        <button mat-menu-item style="width: 400px;">
-                            <mat-icon>exit_to_app</mat-icon>
-                            <span class="offset-4">Status : <i>Connected</i></span>
-                        </button>
                         <div mat-menu-item style="width: 400px;">
                             <mat-icon>exit_to_app</mat-icon>
-                            <span class="offset-8">Profile</span>
+                            <span class="offset-4">Status : <i>Connected</i></span>
                         </div>
+                        <button mat-menu-item style="width: 400px;" routerLink="./profile">
+                            <mat-icon>exit_to_app</mat-icon>
+                            <span class="offset-8">Profile</span>
+                        </button>
                         <mat-divider></mat-divider>
                         <button mat-menu-item style="width: 400px;" (click)="deconnexion()">
                             <mat-icon>exit_to_app</mat-icon>

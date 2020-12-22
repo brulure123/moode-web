@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from 'src/models/client.model';
 
 @Component({
   selector: 'app-abonnements',
@@ -28,19 +29,4 @@ export class AbonnementsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-}
-
-export class Client {
-  id: string;
-  email: string;
-  password: string;
-  nom: string;
-  prenom: string;
-  pseudo: string;
-  genre: string;
-  role: string;
-  status: boolean;
-  imgsrc: string;
-  idPsychologue: string;
 }

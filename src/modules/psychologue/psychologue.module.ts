@@ -26,6 +26,8 @@ import { PublierArticleComponent } from './pages/publier-article/publier-article
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WidgetCardComponent } from './widgets/widget-card/widget-card.component';
 import { WidgetAreaComponent } from './widgets/widget-area/widget-area.component';
+import { WidgetTableComponent } from './widgets/widget-table/widget-table.component';
+import { WidgetTableRightComponent } from './widgets/widget-table-right/widget-table-right.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { WidgetAreaComponent } from './widgets/widget-area/widget-area.component
     PublierArticleComponent,
     ProfileComponent,
     WidgetCardComponent,
-    WidgetAreaComponent
+    WidgetAreaComponent,
+    WidgetTableComponent,
+    WidgetTableRightComponent
   ],
   imports: [
     CommonModule,

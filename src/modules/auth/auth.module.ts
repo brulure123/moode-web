@@ -1,3 +1,4 @@
+import { MatIconModule } from '@angular/material/icon';
 import { AuthComponent } from './auth.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,7 +15,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AuthComponent, AuthentificationComponent, RegisterComponent],
@@ -32,6 +33,7 @@ import {MatSnackBarModule } from '@angular/material/snack-bar';
     MatToolbarModule,
     FormsModule,
     MatSnackBarModule,
+    MatIconModule,
     ReactiveFormsModule
   ]
 })
