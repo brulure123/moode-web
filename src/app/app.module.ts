@@ -24,9 +24,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     PsychologueModule,
     AuthModule,
     AdminModule,
-    AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule
   ],
   providers: [],

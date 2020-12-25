@@ -19,17 +19,19 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () =>
         import('../modules/auth/auth-routing.module').then(m => m.AuthRoutingModule),
+        canActivate: [SignGuard]
   },
   {
       path: 'admin',
       loadChildren: () =>
           import('../modules/admin/admin-routing.module').then(m => m.AdminRoutingModule),
-      canActivate: [AuthGuard]
+          canActivate: [AuthGuard]
   },
   {
       path: 'psychologue',
       loadChildren: () =>
           import('../modules/psychologue/psychologue-routing.module').then(m => m.PsychologueRoutingModule),
+          canActivate: [AuthGuard]
   },
   {
     path: '**',

@@ -22,9 +22,9 @@ const routes: Routes = [
       {
         path: 'accueil',
         component: DashboardComponent,
-        resolve: {
-          psychologue: PsychologueResolver
-        }
+        //resolve: {
+          //psychologue: PsychologueResolver
+        //}
       },
       {
         path: 'abonnements',
