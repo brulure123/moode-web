@@ -13,6 +13,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { AfficherArticleComponent } from './pages/afficher-article/afficher-article.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
@@ -32,6 +33,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
+    MatCardModule,
     FlexLayoutModule,
     MatButtonModule,
     BlogRoutingModule

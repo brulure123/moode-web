@@ -1,8 +1,6 @@
 import { PsychologueResolver } from './../../resolvers/psychologue.resolver';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { PublierArticleComponent } from './pages/publier-article/publier-article.component';
 import { MesPatientsComponent } from './pages/mes-patients/mes-patients.component';
-import { MesArticlesComponent } from './pages/mes-articles/mes-articles.component';
 import { AbonnementsComponent } from './pages/abonnements/abonnements.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PsychologueComponent } from './psychologue.component';
@@ -31,16 +29,8 @@ const routes: Routes = [
         component: AbonnementsComponent,
       },
       {
-        path: 'articles',
-        component: MesArticlesComponent,
-      },
-      {
         path: 'patients',
         component: MesPatientsComponent,
-      },
-      {
-        path: 'pubarticle',
-        component: PublierArticleComponent,
       },
       {
         path: 'profile',

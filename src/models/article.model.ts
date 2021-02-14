@@ -3,6 +3,6 @@ export class Article {
     titre: string;
     src: string;
     corps: string;
-    nombreDeVue: string;
+    nombreDeVue: number;
     dateEdition: Date;
 }

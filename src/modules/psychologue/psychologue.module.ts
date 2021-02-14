@@ -21,8 +21,6 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AbonnementsComponent } from './pages/abonnements/abonnements.component';
 import { MesPatientsComponent } from './pages/mes-patients/mes-patients.component';
-import { MesArticlesComponent } from './pages/mes-articles/mes-articles.component';
-import { PublierArticleComponent } from './pages/publier-article/publier-article.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WidgetCardComponent } from './widgets/widget-card/widget-card.component';
 import { WidgetAreaComponent } from './widgets/widget-area/widget-area.component';
@@ -39,8 +37,6 @@ import { WidgetTableRightComponent } from './widgets/widget-table-right/widget-t
     DashboardComponent,
     AbonnementsComponent,
     MesPatientsComponent,
-    MesArticlesComponent,
-    PublierArticleComponent,
     ProfileComponent,
     WidgetCardComponent,
     WidgetAreaComponent,

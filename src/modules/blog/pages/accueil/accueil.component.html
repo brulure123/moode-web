@@ -1,32 +1,19 @@
-<!-- Blog Entries Column -->
-<div class="jumbotron">
+<div>
 
-    <h1 class="my-4">Moode (0_0) |
+    <h1 class="my-4" style="font-family: cursive">Moode (0_0) |
         <small>Psychologie et Intelligence Artificielle</small>
     </h1>
 
-    <!-- Blog Post -->
-    <div class="card mb-4" *ngFor="let article of articles">
-        <img class="card-img-top" src="../../../../assets/ai-bot.jpeg" height="300" alt="Card image cap">
-        <div class="card-body">
-            <h2 class="card-title">{{article.titre}}</h2>
-            <p class="card-text">{{ article.corps}}</p>
-            <a routerLink="./article" class="btn btn-primary offset-9">Voir plus... &rarr;</a>
-        </div>
-        <div class="card-footer text-muted">
-            Posté le 1 Janvier , 2020 par
-            <a href="#">Admin</a>
+    <div class="card bg-dark text-white">
+        <img [src]="this.str" class="card-img" alt="..." style="height: 27rem;">
+        <div class="card-img-overlay">
+            <h5 class="card-title"></h5>
+            <p class="card-text"></p>
+            <p class="cardd-text"></p>
+            <div class="col-3 offset-9" style="margin-top: 350px;">
+                <button mat-raised-button color="primary" (click)="prevImage()"><mat-icon>skip_previous</mat-icon></button>
+                <button mat-raised-button color="primary" style="margin-left: 5px;" (click)="nextImage()"><mat-icon>skip_next</mat-icon></button>
+            </div>
         </div>
     </div>
-
-    <!-- Pagination -->
-    <ul class="pagination justify-content-center mb-4">
-        <li class="page-item">
-            <a class="page-link" href="#">&larr; Ancien</a>
-        </li>
-        <li class="page-item disabled">
-            <a class="page-link" href="#">Suivant &rarr;</a>
-        </li>
-    </ul>
-
-</div><!-- Blog Entries Column -->
+</div>

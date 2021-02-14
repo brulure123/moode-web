@@ -5,22 +5,39 @@ import { ArticleService } from 'src/services/article.service';
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.scss']
+  styleUrls: ['./accueil.component.scss'] 
 })
 export class AccueilComponent implements OnInit {
 
   articles: Article[];
+  catalogue = [
+    "../../../../assets/ai-bot.jpeg",
+    "../../../../assets/ai-bot-1.jpg",
+    "../../../../assets/ai-bot-2.jpg",
+    "../../../../assets/ai-bot-3.png"
+  ]
+  str: string;
+  indice: number = 0;
 
-  constructor(private articleService: ArticleService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.articleService.getArticles().subscribe(data => {
-      this.articles = data.map(e => {
-        return {
-          id: e.payload.doc.id,
-          ...e.payload.doc.data()
-        } as Article;
-      });
-    });
+    this.str = this.catalogue[this.indice];
+  }
+
+  nextImage(): void {
+    const taille = this.catalogue.length;
+    this.indice = this.indice + 1;
+    if(this.indice >= taille)
+      this.indice = 0;
+    this.str = this.catalogue[this.indice];
+  }
+
+  prevImage(): void {
+    const taille = this.catalogue.length;
+    this.indice = this.indice - 1;
+    if(this.indice < 0)
+      this.indice = taille - 1;
+    this.str = this.catalogue[this.indice];
   }
 }
