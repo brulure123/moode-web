@@ -23,6 +23,10 @@ export class AccueilComponent implements OnInit {
 
   ngOnInit(): void {
     this.str = this.catalogue[this.indice];
+
+    setInterval(() => {
+      this.nextImage()
+    }, 10000);
   }
 
   nextImage(): void {

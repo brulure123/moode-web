@@ -12,16 +12,16 @@ export class AbonnementsComponent implements OnInit {
   nouveauxAbonnements: Client[] = [
     {
       id: 'string',
-      email: 'string',
-      password: 'string',
-      nom: 'string',
-      prenom: 'string',
-      pseudo: 'string',
-      genre: 'string',
-      role: 'string',
+      email: 'benraj.200@gmail.com',
+      password: '23617252',
+      nom: 'Zongwe',
+      prenom: 'Benoni',
+      pseudo: 'angular',
+      genre: 'M',
+      role: 'PSY',
       status: true,
-      imgsrc: 'string',
-      idPsychologue: 'string'
+      imgsrc: 'image',
+      idPsychologue: '1'
     }
   ];
 
